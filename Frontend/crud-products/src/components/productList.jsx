@@ -17,15 +17,21 @@ export default function ProductList() {
 
   return (
     <div className="mt-10">
-        
-      <h1 className="text-3x1 font-bold text-sky-900">Productos en disponibilidad</h1>
-    
-      <div className="grid grid-cols-1 md:grid-cols-3 mt-3 gap-4"> 
+
+      <h1 className="text-3xl font-bold text-sky-900">Productos en disponibilidad</h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 mt-5 mx-10 gap-5">
         { products.map( product => (
-          <div key={product.id} className="bg-amber-200 p-4 rounded-lg shadow">
-            <p>{product.nombre}</p>
-            <p>{product.descripcion}</p>
-            <p>{product.precio}</p>
+          <div key={product.id} className="bg-amber-200 p-3 rounded-xl shadow">
+            <p><span className="font-bold">Nombre:</span> {product.nombre}</p>
+            <p><span className="font-bold">Descripción:</span> {product.descripcion}</p>
+            <p><span className="font-bold">Precio:</span> {product.precio}</p>
+            <p><span className="font-bold">Cantidad:</span> {product.cantidad}</p>
+
+            <div className="mt-3">
+              <button className="bg-green-500 px-3 py-1 rounded-lg text-white hover:bg-green-600 mr-2">Editar</button>
+              <button className="bg-red-500 px-3 py-1 rounded-lg text-white hover:bg-red-600">Eliminar</button>
+            </div>
           </div>
         ))}
       </div>

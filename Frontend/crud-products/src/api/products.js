@@ -7,3 +7,5 @@ const PRODUCT_API = axios.create({
 export const getProducts = () => PRODUCT_API.get('/').then(res => res.data);  
 
 export const createProduct = (product) => PRODUCT_API.post('/', product).then(res => res.data);
+
+export const deleteProduct = (id) => PRODUCT_API.delete(`/${id}/`).then(res => res.data);
